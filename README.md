@@ -1,4 +1,4 @@
-# node-cpfcnpj-validator
+# typescript-cpfcnpj-validator
 Funções para auxiliar na utilização de CPF ou CNPJ em typescript.
 
 ## Sobre
