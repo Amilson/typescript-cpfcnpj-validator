@@ -1,48 +1,39 @@
-# backend_test_agile
-This is a test for job on Agile Content
+# typescript-cpfcnpj-validator
+Funções para auxiliar na utilização de CPF ou CNPJ em typescript.
 
-## Job name
-Desenvolvedor Backend (C#/Node.js) - Agile Content
+## Sobre
+Os métodos aqui desenvolvidos tem como objetivo auxiliar na validação de números de documentos, seja CPF ou CNPJ, e também efetuar a geração de documentos válidos.
 
-## How to use
-- As root, do the following:
+## Pre-requisitos
+Importe o novo arquivo criado (.ts) com o código e certifique-se de importar as funções que deseja utilizar.
 ````
-npm install
+import { isCPFCNPJValid, generateCPFCNPJ } from './cpfcnpj.ts';
 ````
+### Utilização -> isCPFCNPJValid
+Método com 1 parâmetro obrigatório, o número do documento, podendo ser formatado ou não!
 ````
-cd /dist
-````
-````
-npm start
-````
+isCPFCNPJValid = function(iDoc:string):boolean{
+  ...
+}
 
-- The result will be something like this:
+let retDocOk : boolean = isCPFCNPJValid("548.156.113-67"); //doc demonstrativo
 ````
-Server is listening on { address: '::', family: 'IPv6', port: 1234 }
-Input the url from log file:
+### Ouput:
 ````
-- After, put the url link from log file, and press ENTER, like this:
-````
-https://s3.amazonaws.com/uux-itaas-static/minha-cdn-logs/input-01.txt
+retDocOk = true; //somente demonstrativo
 ````
 
-- After run, some to-do information will be apper:
+#### Utilização -> generateCPFCNPJ
+Neste método se faz necessário informar um parâmetro de entrada indicando se deve ser gerado um documento CPF ou CNPJ.
+Também é possível informar se o retorno deve ser formatado com o padrão CPF ou CNPJ.
 ````
-Download is starting...
-Download finished
->>Starting conversion
->>Conversion finish
-To see the new log's file, please access the following link:
-
-localhost:1234/getAgoraFormat/fkcoy
-
-##Closing process, please do CTRL + C
+generateCPFCNPJ = function(iTpDoc:string, iMask:boolean=false):string{
+   ...
+}
+generateCPFCNPJ = function(iTpDoc:string, iMask:boolean=false):string{
+let retDocGen : string = generateCPFCNPJ("548.156.113-67"); //doc demonstrativo
 ````
-
-## How to see the new log file
-Access the localhost:1234/getAgoraFormat/fkcoy to see the "Agora" format
-
-## Notes
-- I don't understanding about the change from INVALIDATE to REFRESH_HIT. So I just make replace one to another.
-- I don't see the version code, then I put "version 1.0" literally
-- Date: I take the current date and put on the Date's line.
+#### Ouput:
+````
+retDocOk = true; //somente demonstrativo
+````
